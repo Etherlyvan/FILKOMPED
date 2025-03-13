@@ -1,0 +1,81 @@
+.book-reviews-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.book-reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.book-reviews-left {
+  flex: 0 0 30%;
+}
+
+.book-reviews-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-reviews-right {
+  flex: 1;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.review-rating {
+  color: #f39c12;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.review-content {
+  color: #333;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .book-reviews-container {
+    flex-direction: column;
+  }
+  
+  .book-reviews-left {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

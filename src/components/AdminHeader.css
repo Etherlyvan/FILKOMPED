@@ -1,0 +1,111 @@
+/* src/components/AdminHeader.css */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-icon {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .header-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #1a1a1a;
+  }
+  
+  .header-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .admin-profile {
+    position: relative;
+  }
+  
+  .profile-image-container {
+    cursor: pointer;
+  }
+  
+/* src/components/AdminHeader.css (lanjutan) */
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+    overflow: hidden;
+  }
+  
+  .dropdown-user-info {
+    padding: 15px;
+  }
+  
+  .dropdown-username {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  
+  .dropdown-email {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .dropdown-divider {
+    height: 1px;
+    background-color: #eee;
+  }
+  
+  .dropdown-logout {
+    width: 100%;
+    padding: 12px 15px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d93025;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .dropdown-logout:hover {
+    background-color: #f5f5f5;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-header {
+      padding: 15px 0;
+    }
+    
+    .header-title h1 {
+      font-size: 20px;
+    }
+  }

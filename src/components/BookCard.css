@@ -1,0 +1,213 @@
+/**
+ * BookCard Component Styles - Optimized for clean image-only left column
+ * Follows design requirements with technical focus on performance
+ */
+
+/* Base card container */
+.book-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  margin-bottom: 16px;
+  will-change: transform; /* GPU acceleration hint */
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Left column - Clean image-only implementation */
+.book-cover-column {
+  flex: 0 0 40%;
+  background-color: #f9f9f9;
+  border-right: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* For potential pseudo-elements if needed */
+}
+
+.cover-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; /* Allow natural width */
+  height: auto; /* Allow natural height */
+  object-fit: contain; /* Changed from cover to contain */
+  display: block;
+}
+
+/* Right column - Book details */
+.book-details-column {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.6em; /* Consistent height regardless of content */
+}
+
+.book-metadata {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.book-year, 
+.book-author, 
+.book-price {
+  margin: 0;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.book-price {
+  font-weight: 600;
+}
+
+/* Action buttons positioned side by side */
+.book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Detail button styling */
+.detail-button {
+  flex: 1;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.detail-button:hover {
+  background-color: #000000;
+}
+
+.detail-button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Cart button styling */
+.cart-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cart-button:hover {
+  background-color: #000000;
+}
+
+.cart-button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Grid layout for book cards */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .book-card {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  
+  .book-cover-column {
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+    height: 180px; /* Fixed height on mobile */
+  }
+  
+  .book-details-column {
+    padding: 12px;
+  }
+  
+  .book-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .book-year, 
+  .book-author, 
+  .book-price {
+    font-size: 12px;
+  }
+  
+  .book-actions {
+    margin-top: 12px;
+  }
+  
+  .detail-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .cart-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* High DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .cover-image {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Print styles */
+@media print {
+  .book-card {
+    box-shadow: none;
+    border: 1px solid #dddddd;
+    break-inside: avoid;
+  }
+  
+  .detail-button, .cart-button {
+    display: none;
+  }
+}

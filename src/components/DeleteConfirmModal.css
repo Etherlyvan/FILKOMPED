@@ -1,0 +1,96 @@
+/* src/components/DeleteConfirmModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .delete-modal {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .delete-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .delete-icon svg {
+    width: 100%;
+    height: 100%;
+    color: #d93025;
+  }
+  
+  .delete-message {
+    margin-bottom: 30px;
+  }
+  
+  .delete-message h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .delete-message p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+  }
+  
+  .delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .confirm-button {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .confirm-button:hover {
+    background-color: #333;
+  }
+  
+  .cancel-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #1a1a1a;
+  }
